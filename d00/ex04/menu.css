@@ -1,0 +1,23 @@
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 40%;
+}
+.menu {
+    background-color: white;
+    color: aqua;
+    font-size: 16px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    text-align: center;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: darkmagenta;
+}
+p:hover {
+    color: darkgreen;
+}
