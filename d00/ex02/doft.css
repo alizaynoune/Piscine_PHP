@@ -1,0 +1,146 @@
+body{background-color: #505050;}
+.head{
+    background-color: #909090;
+    width: 1100px;
+    height: 90px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 5px 10px #303030;
+}
+.center-all{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin-left: 100px;
+    width: 1100px;
+    height: 464px;
+}
+.center{
+    width: 800px;
+    background-color: #909090;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 5px 10px #303030;
+}
+.left{
+    background-color: #909090;
+    text-align: center;
+    margin-left: 30px;
+    float: left;
+    width: 90px;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 5px 10px #303030;
+}
+.right{
+    position: relative;
+    background: #909090;
+    text-align: center;
+    float: right;
+    margin-right: 30px;
+    width: 90px;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 5px 10px #303030;
+}
+.loup{
+    
+    position: absolute;
+    margin-left: 980px;
+    margin-top: 15px;
+}
+
+.day-42{
+    position: absolute;
+    height: 150px;
+    margin-left: 6px;
+}
+.reload{
+
+    position: absolute;
+    margin-left: 1070px;
+    margin-top: 5px;
+}
+.close{
+    position: absolute;
+    margin-left: 1070px;
+    margin-top: 60px;
+}
+.f-img{
+    margin-top: 15px;
+}
+#img{
+    background-color: red;
+}
+.text{
+    position: absolute;
+    background-color: #87FF89;
+    height: 178px;
+    margin-left: -26px;
+    margin-top: 392px;
+    border-radius: 8px;
+    width: 419px;
+    box-shadow: 5px 10px #303030;
+}
+.p-text{
+    margin-left: 9px;
+}
+
+.p-text2{
+    margin-top: 64px;
+    text-align: left;
+}
+#p1{
+    position: absolute;
+    margin-top: 35px;
+}
+#p2{
+    position: absolute;
+    margin-left: 134px;
+    margin-top: 35px;
+}
+#hh{
+    position: absolute;
+    float:inline-start;
+    margin-bottom: 300px;
+    margin-left: 40px;
+}
+#inbox{
+    width: 287px;
+}
+#t-shado{
+    text-shadow: 9px 2px #C28F55;
+}
+#link1{
+    position: absolute;
+    display: flex;
+    width: 150px;
+    height: 88px;
+    margin-left: 782px;
+    margin-top: 270px;
+}
+#link2{
+    
+    position: absolute;
+    display: flex;
+    width: 62px;
+    height: 91px;
+    margin-bottom: 200px;
+    margin-top: 269px;
+    margin-left: 405px;
+}
+.cluster{
+    width:800px;
+    height:450px;
+}
+.brick{
+    position: absolute;
+    margin-left: 5px;
+    background-image: url("resources/brick.jpg");
+    width: 80px;
+    height: 60px;
+}

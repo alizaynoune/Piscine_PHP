@@ -2,10 +2,12 @@
 <?php
 while (true)
 {
-    $nbr = readline('Entre a number: ');
+	$nbr = "";
+	print("Enter a number: ");
+	fscanf(STDIN, "%s", $nbr);
     if (feof(STDIN))
     {
-        echo"\n";
+        print"\n";
         exit();
     }
     if (is_numeric($nbr))
@@ -17,6 +19,6 @@ while (true)
            print(" is even\n");
     }
     else
-    print("'$nbr' is not a number\n");
+		print("'$nbr' is not a number\n");
 }
 ?>
