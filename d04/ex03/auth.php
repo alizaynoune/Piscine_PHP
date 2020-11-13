@@ -1,5 +1,4 @@
 <?php
-#auth($_GET["login"], $_GET["passwd"]);
 function auth($login, $passwd)
 {
     $file = "../private/passwd";
@@ -10,19 +9,14 @@ function auth($login, $passwd)
             $init_user[0]["passwd"] = hash("whirlpool", $passwd);
             $hash_user = serialize($init_user);
             if (loop_users($all_users, $hash_user))
-            {
-                echo "ok\n";
                 return (true);
-            }
         }
-    echo "error\n";
     return(false);
 }
 
 function    loop_users($all_users, $hash_user)
 {
     $i = 0;
-    $j = 0;
     $line = "";
     while ($all_users[$i] !== "")
     {
@@ -30,11 +24,10 @@ function    loop_users($all_users, $hash_user)
         {
             if ($line == $hash_user)
                 return (true);
-            $j = 0;
             $line = "";
             $i++;
         }
-        $line[$j++] = $all_users[$i++];
+        $line = $line.$all_users[$i++];
     }
     return (false);
 }

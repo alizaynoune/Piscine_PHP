@@ -1,5 +1,5 @@
 <?php
-if ($_POST["submit"] === "OK" && $_POST["login"] !== "" && $_POST["oldpw"] !== "" && $_POST["newpw"] !== "")
+if ($_POST["submit"] === "OK" && $_POST["login"] !== "" && $_POST["oldpw"] !== "" && $_POST["newpw"] !== "" && ($_POST["oldpw"] !== $_POST["newpw"]))
 {
     $file = "../private/passwd";
     if (!($all_data = file_get_contents($file)))
@@ -29,7 +29,6 @@ else
 function        usr_exist($file, $old_pw, $login, $all_data)
 {
     $i = 0;
-    $j = 0;
     $ret = false;
     $tab = "";
     $line = "";
@@ -48,12 +47,11 @@ function        usr_exist($file, $old_pw, $login, $all_data)
             }
             else
                 $tab = $tab.$line."\n";
-            $j = 0;
             $i++;
             $line = "";
         }
         else
-            $line[$j++] = $all_data[$i++];
+            $line = $line.$all_data[$i++];
     }
     if ($ret === true)
         file_put_contents($file, $tab);

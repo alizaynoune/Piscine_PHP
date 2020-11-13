@@ -7,9 +7,9 @@ if ($_GET['submit'] === "OK")
 }
 ?>
 <html><body>
-<form action="index.php" method="get">
-<input type="text" name="login" placeholder="login" value = "<?=$_SESSION['login']?>"/></br>
-<input type="password" name="passwd" placeholder="password" value="<?=$_SESSION['passwd']?>"/></br>
+<form action="index.php" method="GET">
+<input type="text" name="login" placeholder="login" value = "<?php echo $_SESSION['login'];?>"/></br>
+<input type="password" name="passwd" placeholder="password" value="<?php echo $_SESSION['passwd'];?>"/></br>
 <input type="submit" name="submit" placeholder="OK" value="OK"/></br>
 </form>
 </body></html>

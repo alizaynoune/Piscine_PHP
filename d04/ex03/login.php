@@ -1,11 +1,17 @@
 <?php
 include 'auth.php';
-if (auth($_GET["login"], $_GET["passwd"]))
+$login = $_GET["login"];
+$pass = $_GET["passwd"];
+if (auth($login, $pass))
 {
-    echo "ok\n";
+    session_start();
+    $_SESSION["loggued_on_user"] = $login;
+    echo "OK\n";
+    return (true);
 }
 else
 {
-    echo "error\n";
+    echo "ERROR\n";
+    return (false);
 }
 ?>

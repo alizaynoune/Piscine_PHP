@@ -32,7 +32,6 @@ else
 function        check_data_exists($new_user, $file)
 {
     $i = 0;
-    $j = 0;
     $line = "";
     if (!file_exists($file))
         return(false);
@@ -45,10 +44,9 @@ function        check_data_exists($new_user, $file)
             if ($old_user[0]["login"] === $new_user)
                 return (true);
             $i++;
-            $j = 0;
+            $line = "";
         }
-        else
-            $line[$j++] = $all_data[$i++];
+        $line = $line.$all_data[$i++];
     }
     return (false);
 }
