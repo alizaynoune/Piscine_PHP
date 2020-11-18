@@ -1,7 +1,7 @@
 <?php
 
 include_once('UnholyFactory.class.php');
-include_once('Fighter.class.php');
+#include_once('Fighter.class.php');
 
 class Footsoldier extends Fighter {
 	public function __construct() {
@@ -71,6 +71,8 @@ $targets = Array("the Hound", "Tyrion", "Podrick");
 
 foreach ($actual_fighters as $f) {
 	foreach ($targets as $t) {
-		$f->fight($t);
+		print($f."=>".$t.PHP_EOL);
+#		$f->fight($t);
 	}
 }
+?>
