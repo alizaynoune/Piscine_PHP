@@ -1,7 +1,7 @@
 <?php
-#include_once('check.php');
+
 include_once('UnholyFactory.class.php');
-#include_once('Fighter.class.php');
+include_once('Fighter.class.php');
 
 class Footsoldier extends Fighter {
 	public function __construct() {
@@ -74,4 +74,3 @@ foreach ($actual_fighters as $f) {
 		$f->fight($t);
 	}
 }
-?>
