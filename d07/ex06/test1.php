@@ -1,5 +1,5 @@
 <?php
-
+#include_once('check.php');
 include_once('UnholyFactory.class.php');
 #include_once('Fighter.class.php');
 
@@ -71,8 +71,7 @@ $targets = Array("the Hound", "Tyrion", "Podrick");
 
 foreach ($actual_fighters as $f) {
 	foreach ($targets as $t) {
-		print($f."=>".$t.PHP_EOL);
-#		$f->fight($t);
+		$f->fight($t);
 	}
 }
 ?>

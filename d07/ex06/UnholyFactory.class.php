@@ -1,23 +1,20 @@
 <?php
-class UnholyFactory extends Fighter {
-	public function __construct() {
-	}
+class UnholyFactory {
+    private $fighters = Array();
 	public function absorb($name) {
-		print(get_class($name).PHP_EOL);
-		$this->$target = $name;
-		#array_push($this->$target, "slls");
-		
+        if ($name instanceof Fighter)
+		print(get_class($name)."\"".$name->id_fighter.PHP_EOL);
 	}
 	public function fabricate($name) {
 		print("===>".($name)."\n");
-#		return($this->$ret);
+#return(clone($name));
 	}
 }
 
-class Fighter {
-	public $target;
-	private $ret;
-	public function __construct() {
+abstract class Fighter {
+	public $id_fighter;
+	public function __construct($fight) {
+        $this->id_fighter = $fight;
 	}
 }
 
