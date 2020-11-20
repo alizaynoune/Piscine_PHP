@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .ballon {
+                background-color: red;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+        </style>
+        <script>
+            function zoom_in_out(_elem, _add, _colors){
+                if ((_elem.offsetWidth + _add) > 420){
+                    _elem.style.width = "200px";
+                    _elem.style.height = "200px";
+                }
+                else if ((_elem.offsetWidth + _add) < 200){
+                    _elem.style.width = "420px"
+                    _elem.style.height = "420px"
+                }
+                else {
+                    _elem.style.width = _elem.offsetWidth + _add + "px";
+                    _elem.style.height = _elem.offsetHeight + _add + "px";
+                }
+                _elem.style.backgroundColor = _colors;
+            }
+
+            function get_color(_add){
+                if (typeof resize.counter == 'undefined' || resize.counter == -1)
+                    resize.counter = 0;
+                if (_add > 0) {
+                    resize.counter++;
+                    if (resize.counter > 2)
+                        resize.counter = 0;
+                }
+                else if (_add < 0){
+                    resize.counter--;
+                    if (resize.counter < 0)
+                        resize.counter = 2;
+                }
+                return (resize.counter);
+            }
+
+            function resize(_elem, _add) {
+                var _colors;
+
+                _colors = ["red", "green", "blue"]
+                    zoom_in_out(_elem, _add, _colors[get_color(_add)]);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="ballon" onclick="resize(this, 10)" onmouseout="resize(this, -5)"></div>
+    </body>
+</html>
