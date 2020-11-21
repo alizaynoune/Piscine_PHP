@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-        <input type="text"/>
-        <select>
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-            <option value="%">%</option>
-        </select>
-        <input type="text"/>
-        <input type="submit" value="Try me!"/>
-    </body>
+
+<head>
+    <script>
+        function _alert(_msg) {
+            alert("Please, use me...");
+        }
+        var _timer = setInterval(_alert, 30000);
+
+        function _result(_frst, _opt, _lst) {
+            if (_opt === "+")
+                return (_frst + _lst);
+            if (_opt === "-")
+                return (_frst - _lst);
+            if (_opt === "*")
+                return (_frst * _lst);
+            if (_opt === "/") {
+                if (_lst === 0) {
+                    alert("It’s over 9000!");
+                    return (null);
+                }
+                return (_frst / _lst);
+            }
+            if (_opt === "%") {
+                if (_lst === 0) {
+                    alert("It’s over 9000!");
+                    return (null);
+                }
+                return (_frst % _lst);
+            }
+        }
+        function _calc(_frst, _opt, _lst) {
+            clearInterval(_timer);
+            if (_frst && _lst && _opt && _frst >= 0 && _lst >= 0) {
+                var rslt = _result(parseInt(_frst), _opt, parseInt(_lst));
+                if (rslt !== null)
+                    console.log(rslt);
+            }
+            else
+                console.log("Error");
+            _timer = setInterval(_alert, 30000);
+        }
+    </script>
+</head>
+
+<body>
+    <input id="_frst" type="text" />
+    <select id="_opt">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input id="_lst" type="text" />
+    <input onclick="_calc(_frst.value, _opt.value, _lst.value)" type="submit" value="Try me!" />
+</body>
+
 </html>
