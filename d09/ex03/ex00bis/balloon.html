@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <title>balloon</title>
+    <header>
+        <style>
+            #balloon{
+                background-color: red;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        
+    </header>
+    <body>
+        <div id="balloon" ></div>
+        <script>
+            function _color(_elem, _add){
+                if (_add > 0){
+                    if (_elem.css("background-color") == 'red')
+                        _elem.css("background-color", 'green');
+                    else if (_elem.css("background-color") == "green")
+                        _elem.css("background-color", "blue");
+                    else if (_elem.css("background-color") == "blue")
+                        _elem.css("background-color", "red")
+                }
+                else if (_add < 0){
+                    if (_elem.css("background-color") == "red")
+                    _elem.css("background-color", "blue");
+                else if (_elem.css("background-color") == "blue")
+                    _elem.css("background-color", "green");
+                else if (_elem.css("background-color") == "green")
+                    _elem.css("background-color", "red");
+                }
+            }
+            function zoom_in_out(_elem, _add){
+                
+                _width = parseInt(_elem.css("width"));
+                if ((_width + _add) >= 200 && (_width + _add) <= 420){
+                    _elem.css( "width", (_width + _add) + "px" );
+                    _elem.css( "height", (_width + _add) + "px" );
+                }
+                else if ((_width + _add) > 420){
+                    console.log((parseInt(_elem.css("width")) + _add));
+                    _elem.css( "width", '420px' );
+                    _elem.css( "height", '420px' );
+                }
+                _color(_elem, _add);
+            }
+            $("#balloon").click(function(){
+                zoom_in_out($(this), 10);
+            });
+            $("#balloon").on("mouseleave", function (){
+                zoom_in_out($(this), -5);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<title>basic calculator</title>
+<header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</header>
+
+<body>
+    <input id="left" type="text" value="" />
+    <select id="oper">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input id="right" type="text" value="" /><br />
+    <input id="culc" type="submit" value="Try me!" />
+    <script>
+        function _alert() {
+            alert("Please, use me...");
+        }
+        var _timer = setInterval(_alert, 30000);
+        $("#culc").click(function () {
+            var sum;
+
+            sum = "Error";
+            clearInterval(_timer);
+            _timer = setInterval(_alert, 30000);
+            if ($("#left").val() && $("#right").val()) {
+                var left = parseInt($("#left").val());
+                var right = parseInt($("#right").val());
+                var op = $("#oper").val();
+                if ($.isNumeric($("#left").val()) && $.isNumeric($("#right").val()) && left >= 0 && right >= 0) {
+                    if (op == "-")
+                        sum = left - right;
+                    if (op == "+")
+                        sum = left + right;
+                    if (op == "*")
+                        sum = left * right;
+                    if (op == "/") {
+                        if (right > 0)
+                            sum = left / right;
+                        else
+                            sum = "It’s over 9000!";
+                    }
+                    if (op == "%") {
+                        if (right > 0)
+                            sum = left % right;
+                        else
+                            sum = "It’s over 9000!";
+                    }
+                }
+                
+              
+            }
+            console.log(sum);
+            alert(sum);
+        })
+    </script>
+</body>
+
+</html>

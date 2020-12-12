@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+    <title>basic calculator</title>
 <head>
     <script>
-        function _alert(_msg) {
+        function _alert() {
             alert("Please, use me...");
         }
         var _timer = setInterval(_alert, 30000);
@@ -17,28 +17,27 @@
                 return (_frst * _lst);
             if (_opt === "/") {
                 if (_lst === 0) {
-                    alert("It’s over 9000!");
-                    return (null);
+                    return("It’s over 9000!");
                 }
                 return (_frst / _lst);
             }
             if (_opt === "%") {
                 if (_lst === 0) {
-                    alert("It’s over 9000!");
-                    return (null);
+                    return("It’s over 9000!");
                 }
                 return (_frst % _lst);
             }
         }
         function _calc(_frst, _opt, _lst) {
             clearInterval(_timer);
-            if (_frst && _lst && _opt && _frst >= 0 && _lst >= 0) {
-                var rslt = _result(parseInt(_frst), _opt, parseInt(_lst));
-                if (rslt !== null)
-                    console.log(rslt);
-            }
-            else
-                console.log("Error");
+            var rslt;
+
+            rslt = "Error";
+            if (_frst && _lst && _opt && _frst >= 0 && _lst >= 0)
+                rslt = _result(parseInt(_frst), _opt, parseInt(_lst));
+            
+            console.log(rslt);
+            alert(rslt);
             _timer = setInterval(_alert, 30000);
         }
     </script>
